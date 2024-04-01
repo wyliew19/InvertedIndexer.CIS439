@@ -1,13 +1,15 @@
 from .processor import Processor
 
 class Dictionary:
-    def __init__(self, doc_id: int, content: list) -> None:
+    """Class to represent a dictionary of words and their counts."""
+    
+    def __init__(self, doc_id: int, content: list):
         self.dictionary = {}
         self.id = doc_id
         for word in content:
-            self.__add(word)
+            self._add(word)
 
-    def __add(self, key: str) -> None:
+    def _add(self, key: str) -> None:
         """Add a key to the dictionary. If the key already exists, increment the count."""
         if key in self.dictionary:
             self.dictionary[key] += 1
